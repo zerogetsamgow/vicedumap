@@ -43,6 +43,7 @@ The following plot shows a map of the four regions which are contained in `viced
 
 ```{r region_map}
 library(vicedumap)
+library(tidyverse)
 ## basic region_map
 ggplot(
   region_map,
@@ -64,7 +65,7 @@ theme(
 The following plot shows a map of the 17 areas which are contained in `vicedumap::area_map`
 
 ```{r area_map}
-## basic region_map
+## basic area_map
 ggplot(
   area_map,
   aes(geometry = geometry,
@@ -83,8 +84,8 @@ theme(
 
 The package contains a third dataset `vicedumap::region_tbl` which shows the mapping of local government areas, to areas, to regions
 
-```{r area_map}
-## basic region_map
+```{r region_tbl}
+## print full table of regions, areas and lgas
 knitr::kable(
   region_tbl
 )
