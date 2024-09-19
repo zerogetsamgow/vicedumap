@@ -11,3 +11,5 @@ Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
+URL: https://github.com/zerogetsamgow/vicedumap
+BugReports: https://github.com/zerogetsamgow/vicedumap/issues
