@@ -1,4 +1,4 @@
-## code to prepare `vic_edu_regions` dataset goes here
+## code to prepare datasets
 
 library(tidyverse)
 library(strayr)

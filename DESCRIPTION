@@ -1,6 +1,6 @@
 Package: vicedumap
 Type: Package
-Title: Provides sf objects for Victorian Department of Education regions and areas
+Title: Victorian Department of Education regions and areas sf objects
 Authors@R: 
     person("Sam", "Gow", , "sam.gow@gmail.com", role = c("aut", "cre"))
 Version: 0.1.0
