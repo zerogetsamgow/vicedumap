@@ -1,15 +1,16 @@
 Package: vicedumap
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Provides sf objects for Victorian Department of Education regions and areas
+Authors@R: 
+    person("Sam", "Gow", , "sam.gow@gmail.com", role = c("aut", "cre"))
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: This package contains sf objects for the Victorian Department of Educations
+    four regions and 17 areas.
+License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
 URL: https://github.com/zerogetsamgow/vicedumap
 BugReports: https://github.com/zerogetsamgow/vicedumap/issues
+RoxygenNote: 7.3.1

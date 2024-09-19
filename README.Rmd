@@ -1,0 +1,92 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# vicedumap
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Vicedumap is a simple package containing sf objects for the Victorian Department of Education's Regions and Areas.
+
+The Department of Education has four regions and 17 areas. 
+
+Areas are groups of local government areas. 
+
+Regions groups of areas.
+
+We have used this simple aggregation to create sf objects by summarising objects obtains using `strayr::read_absmap("lga2021")`
+
+## Installation
+
+You can install the development version of vicedumap from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("zerogetsamgow/vicedumap")
+```
+
+## region_map
+
+The following plot shows a map of the four regions which are contained in `vicedumap::area_map`.
+
+```{r region_map}
+library(vicedumap)
+## basic region_map
+ggplot(
+  region_map,
+  aes(geometry = geometry,
+  fill = region_name)
+  ) +
+geom_sf()+
+ggthemes::theme_map()+
+theme(
+  legend.position.inside = c(.7,.7)
+  )
+
+```
+
+
+
+## area_map
+
+The following plot shows a map of the 17 areas which are contained in `vicedumap::area_map`
+
+```{r area_map}
+## basic region_map
+ggplot(
+  area_map,
+  aes(geometry = geometry,
+  fill = area_name)
+  ) +
+geom_sf()+
+ggthemes::theme_map()+
+theme(
+  legend.position = "right",
+  legend.justification = "centre"
+  )
+
+```
+
+## region_tbl
+
+The package contains a third dataset `vicedumap::region_tbl` which shows the mapping of local government areas, to areas, to regions
+
+```{r area_map}
+## basic region_map
+knitr::kable(
+  region_tbl
+)
+
+```
