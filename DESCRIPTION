@@ -3,7 +3,7 @@ Type: Package
 Title: Victorian Department of Education regions and areas sf objects
 Authors@R: 
     person("Sam", "Gow", , "sam.gow@gmail.com", role = c("aut", "cre"))
-Version: 0.1.0
+Version: 0.2.1
 Description: This package contains sf objects for the Victorian Department of Educations
     four regions and 17 areas.
 License: CC BY 4.0
