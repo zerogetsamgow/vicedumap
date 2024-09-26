@@ -14,3 +14,15 @@ Depends:
 URL: https://github.com/zerogetsamgow/vicedumap
 BugReports: https://github.com/zerogetsamgow/vicedumap/issues
 RoxygenNote: 7.3.1
+Imports: 
+    dplyr,
+    ggplot2,
+    ggrepel,
+    ggthemes,
+    knitr,
+    rvest,
+    sf,
+    stringr,
+    tibble,
+    tidyr,
+    usethis

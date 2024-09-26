@@ -13,10 +13,10 @@ The Department of Education has four regions and 17 areas.
 
 Areas are groups of local government areas.
 
-Regions groups of areas.
+Regions are groups of areas.
 
-We have used this simple aggregation to create sf objects by summarising
-objects obtains using `strayr::read_absmap("lga2021")`
+We have used this simple aggregation approach to create sf objects by
+summarising objects obtains using `strayr::read_absmap("lga2021")`
 
 ## Installation
 
@@ -35,27 +35,26 @@ in `vicedumap::area_map`.
 
 ``` r
 library(vicedumap)
-library(tidyverse)
-#> ── Attaching core tidyverse packages ───────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.1.4     ✔ readr     2.1.5
-#> ✔ forcats   1.0.0     ✔ stringr   1.5.1
-#> ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-#> ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-#> ✔ purrr     1.0.2     
-#> ── Conflicts ─────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
 ## basic region_map
-ggplot(
+ggplot2::ggplot(
   region_map,
-  aes(geometry = geometry,
-  fill = region_name)
+  ggplot2::aes(
+    geometry = geometry,
+    fill = region_name,
+    label = region_name,
+    x = cent_long,
+    y = cent_lat
+    )
   ) +
-geom_sf()+
-ggthemes::theme_map()+
-theme(
-  legend.position.inside = c(.7,.7)
+  ggplot2::geom_sf(
+   colour = "darkgrey"
+   )+
+  ggplot2::geom_label(colour = "black", fill = "grey", size = 3)+
+  ggplot2::scale_fill_viridis_d(guide = "none")+
+  ggthemes::theme_map()+
+  ggplot2::theme(
+    legend.position.inside = c(.7,.7)
   )
 ```
 
@@ -68,16 +67,29 @@ The following plot shows a map of the 17 areas which are contained in
 
 ``` r
 ## basic area_map
-ggplot(
+ggplot2::ggplot(
   area_map,
-  aes(geometry = geometry,
-  fill = area_name)
+  ggplot2::aes(
+    geometry = geometry,
+    fill = area_name,
+    label = area_name,
+    x = cent_long,
+    y = cent_lat
+    )
   ) +
-geom_sf()+
-ggthemes::theme_map()+
-theme(
-  legend.position = "right",
-  legend.justification = "centre"
+  ggplot2::geom_sf(
+   colour = "darkgrey"
+   )+
+  ggrepel::geom_label_repel(
+    colour = "black", 
+    fill = "grey",
+    size = 2,
+    max.overlaps = 20,
+    segment.colour = "grey")+
+  ggplot2::scale_fill_viridis_d(guide = "none")+
+  ggthemes::theme_map()+
+  ggplot2::theme(
+    legend.position.inside = c(.7,.7)
   )
 ```
 
