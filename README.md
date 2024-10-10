@@ -56,6 +56,8 @@ ggplot2::ggplot(
   ggplot2::theme(
     legend.position.inside = c(.7,.7)
   )
+#> Warning: Removed 1 row containing missing values or values outside the
+#> scale range (`geom_label()`).
 ```
 
 <img src="man/figures/README-region_map-1.png" width="100%" />

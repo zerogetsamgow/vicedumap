@@ -1,5 +1,6 @@
 ## code to prepare datasets
-
+library(tidyverse)
+library(rvest)
 # Read table of regions, areas, and lgas from departmental website
 region.text =
  rvest::read_html(
@@ -66,8 +67,8 @@ lga_map =
 # Create region_map
 region_map =
   region_tbl |>
-  dplyr::left_join(lga_map) |>
-  sf::st_as_sf()  |>
+  dplyr::right_join(lga_map) |>
+  sf::st_as_sf() |>
   dplyr::group_by(region_name) |>
   dplyr::summarise() |>
   dplyr::group_by(region_name) |>
